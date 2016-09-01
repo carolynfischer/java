@@ -36,6 +36,28 @@ public class Car {
         isTheCarOn = customIsTheCarOn;
     }
     
+    // getters and setters
+    // getters get the properties that are associated with the certain instance
+    public int getMaxSpeed() {
+        return this.maxSpeed;
+    }
+    
+    public void setMaxSpeed(int newMaxSpeed) {
+        this.maxSpeed = newMaxSpeed;
+    }
+    
+    public int getMinSpeed() {
+        return this.minSpeed;
+    }
+    
+    public double getWeight() {
+        return this.weight;
+    }
+    
+    public boolean getIsTheCarOn() {
+        return this.isTheCarOn; 
+    }
+    
     public void printVariables() {
         System.out.println("This is the maxSpeed " + maxSpeed);
         System.out.println(minSpeed);
@@ -55,8 +77,12 @@ public class Car {
         maxSpeed = maxSpeed + 1;
     }
     
+    public void upgradeMaxSpeed() {
+        setMaxSpeed(getMaxSpeed() + 10);
+    }
+    
     public void getIn() {
-        if(numberOfPeopleInCar < maxNumberOfPeopleInCar) {
+        if(this.numberOfPeopleInCar < maxNumberOfPeopleInCar) {
             numberOfPeopleInCar++;
             System.out.println("Someone got into the car");
         } else {
@@ -65,7 +91,7 @@ public class Car {
     }
     
     public void getOut() {
-        if(numberOfPeopleInCar > 0) {
+        if(this.numberOfPeopleInCar > 0) {
             numberOfPeopleInCar--;
         } else {
             System.out.println("Noone is in the car " + numberOfPeopleInCar);   
