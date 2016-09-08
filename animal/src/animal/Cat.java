@@ -11,6 +11,14 @@ public class Cat extends Animal {
         System.out.println("A cat meowns.");
     }
     
+    public void eat() {
+        System.out.println("A cat is eating.");
+    }
+    
+    public void sleep() {
+        System.out.println("A cat is sleeping");
+    }
+    
     public void prance() {
         System.out.println("A cat is prancing.");
     }

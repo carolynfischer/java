@@ -4,7 +4,7 @@ package animal;
  *
  * @author carry
  */
-public class Animal {
+public abstract class Animal {
 
     public int age;
     
@@ -14,8 +14,10 @@ public class Animal {
         System.out.println("Animal has been created!");
     }
     
-    public void eat() {
-        System.out.println("An animal is eating.");
+    public abstract void eat();
+    
+    public void sleep() {
+        System.out.println("An animal is sleeping.");
     }
     
     // you can get private variables in a public class, if this was changed to private
@@ -24,22 +26,32 @@ public class Animal {
     }
     
     public static void main(String[] args) {
-        // TODO code application logic here
-        Animal a = new Animal(5);
         Dog d = new Dog();
         Cat c = new Cat();
-        d.ruff();
-        System.out.println(d.age); // can access with pubilc, but not when it's private
-        c.meow();
-        System.out.println(c.age);
-        a.eat();
         d.eat();
         c.eat();
-        d.run();
-        c.prance();
+        d.sleep();
+        c.sleep();
         
-        // we can't use Dog class to ruff directly
+        // Object Casting
+        Object dog = new Dog();
+        // dog. douesn't have Dog methods like ruff()
+        // convert back to a real dog to get the methods
+        Dog realDog = (Dog) dog;
+        realDog.ruff();
         
+        Object str = "est";
+        String realS = (String) str;
+        // now have access to string methods again
+        realS.charAt(0);
+        
+        // what happens when...
+        Dog doggy = new Dog();
+        if (doggy instanceof Animal) {
+            Animal animal = (Animal) doggy;
+            animal.sleep();
+        }
+        doggy.sleep();
     }
     
 }
