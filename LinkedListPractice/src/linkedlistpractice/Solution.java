@@ -39,9 +39,7 @@ public class Solution {
             int ele = sc.nextInt();
             head = insert(head,ele);
         }
-        System.out.println("beginning of answer");
         display(head);
-        System.out.println("end of answer");
         sc.close();
     }
 }
