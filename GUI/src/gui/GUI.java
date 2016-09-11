@@ -24,10 +24,10 @@ public class GUI extends JFrame implements ActionListener {
         setSize(300, 300);
         setTitle("Basic calculator");
         setVisible(true);
-        initialize();
+        Initialize();
     }
     
-    public void initialize() {
+    public void Initialize() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(10, 1));
         
@@ -66,16 +66,14 @@ public class GUI extends JFrame implements ActionListener {
         btnDivide.addActionListener(this);
     }
     
-    public void ActionPerformed(ActionEvent e) throws java.lang.Exception {
+    @Override
+    public void actionPerformed(ActionEvent e) {
         String btnName = e.getActionCommand();
         
         try {
             int fNum = Integer.parseInt(txt_fNum.getText().trim());
             int sNum = Integer.parseInt(txt_sNum.getText().trim());
-            
-            System.out.println("First number " + fNum);
-            System.out.println("Second number " + sNum);
-            
+     
             if (btnName.equals("Add")) {
                 int result = fNum + sNum;
                 System.out.println("result " + result);
@@ -101,11 +99,6 @@ public class GUI extends JFrame implements ActionListener {
     
     public static void main(String[] args) {
         
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     private Exception Exception(String cannot_divide_by_zero) {
