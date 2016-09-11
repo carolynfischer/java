@@ -8,23 +8,27 @@ import java.util.*;
  */
 public class Solution {
 
-    char[] firstArray;
-    char[] secondArray;
-    
+    Stack<Character> stack = new Stack<Character>();
+    Queue<Character> queue = new LinkedList<Character>() {};
+
+    // push to stack
     public void pushCharacter(char c) {
-        firstArray.add(c);
+        stack.push((Character) c);
     }
     
+    // push to queue
     public void enqueueCharacter(char c) {
-        
+        queue.add(c);
     }
     
-    public char popCharacher(char c) {
-        
+    // pop from stack
+    public char popCharacter() {
+        return stack.pop();
     }
     
-    public char dequeueCharacter(char c) {
-        
+    // pop from queue
+    public char dequeueCharacter() {
+        return queue.remove();
     }
     
     public static void main(String[] args) {
