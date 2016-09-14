@@ -6,10 +6,10 @@ import java.util.LinkedList;
  *
  * @author carry
  */
-public class LinkedListUS {
+public class LinkedListUS<D> {
     // properties
-    Node head;
-    int count;
+    Node<D> head;
+    Integer count;
     
     // contructors
     public LinkedListUS() {
@@ -17,16 +17,16 @@ public class LinkedListUS {
         count = 0;
     }
     
-    public LinkedListUS(Node newHead) {
+    public LinkedListUS(Node<D> newHead) {
         head = newHead;
         count = 1;
     }
     
     // methods  
     // add
-    public void add(int newData) {
-        Node temp = new Node(newData);
-        Node current = head;
+    public void add(D newData) {
+        Node<D> temp = new Node(newData);
+        Node<D> current = head;
         // go to the end
         while(current.getNext() != null) {
             current = current.getNext();
@@ -36,11 +36,11 @@ public class LinkedListUS {
     }
     
     // get
-    public int get(int index) {
-        if (index != 0) {
-            return -1;
-        } 
-        Node current = head;
+    public D get(int index) {
+//        if (index != 0) {
+//            return -1;
+//        } 
+        Node<D> current = head;
         // index is # in list, it has to be 1-based index
         for (int i = 1; i < index; i++) {
             current = current.getNext();
@@ -62,7 +62,7 @@ public class LinkedListUS {
     // remove
     public void remove() {
         // remove from the back of the list
-        Node current = head;
+        Node<D> current = head;
         while (current.getNext().getNext() != null) {
             current = current.getNext();
         }
