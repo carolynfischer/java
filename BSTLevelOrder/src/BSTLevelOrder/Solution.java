@@ -17,17 +17,17 @@ class Node{
 class Solution{
     
     static void levelOrder(Node root){
-        LinkedList<Node> queue = new LinkedList();
-        queue.add(root);
+        LinkedList<Node> ll = new LinkedList();
+        ll.add(root);
         
-        while (!queue.isEmpty()) {
-            Node current = queue.remove();
+        while (!ll.isEmpty()) {
+            Node current = ll.remove();
             System.out.print(current.data + " ");
             if (current.left != null) {
-                queue.add(current.left);
+                ll.add(current.left);
             }
             if (current.right != null) {
-                queue.add(current.right);
+                ll.add(current.right);
             }
         }
     }
