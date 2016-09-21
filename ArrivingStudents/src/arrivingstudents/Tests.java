@@ -20,12 +20,9 @@ public class Tests {
                 present += 1;
             }
         }
-        //System.out.println("present " + present + " from required " + treshold + " " + Arrays.toString(arrivals));
         if (present >= treshold) {
-            //System.out.println("NO");
             result = "no";
         } else {
-            //System.out.println("YES");
             result = "yes";
         }
         return result;
@@ -109,7 +106,6 @@ public class Tests {
                 treshold = output[1];
                 arrivals = Arrays.copyOfRange(output, 2, output.length);
             };
-            //System.out.println(results[i] + " was the same as solve " + solve(students, treshold, arrivals));
             printOutput(students, treshold, arrivals);
         }
     }
