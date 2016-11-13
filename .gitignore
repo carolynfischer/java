@@ -101,3 +101,8 @@
 .metadata/
 /PhraseOMatic/nbproject/private/
 /PhraseOMatic/build/
+/Anagrams/nbproject/private/
+/Anagrams/build/
+/Tokens/nbproject/private/
+/Tokens/dist/
+/Tokens/build/
